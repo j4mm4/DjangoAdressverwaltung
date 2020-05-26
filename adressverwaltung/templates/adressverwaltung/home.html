@@ -1,0 +1,97 @@
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+   <div class="container">
+      <form class="form-horizontal" action="/adresse/" method="post">{% csrf_token %}
+         <div class="form-group">
+            <label class="control-label col-sm-2" for="first_name">Vorname:</label>
+            <div class="col-sm-10">
+               <input type="first_name" class="form-control" id="first_name" name="first_name" placeholder="Vorname eingeben">
+            </div>
+         </div>
+         <div class="form-group">
+            <label class="control-label col-sm-2" for="last_name">Nachname:</label>
+            <div class="col-sm-10"> 
+               <input type="last_name" class="form-control" id="last_name" name="last_name" placeholder="Nachname eingeben">
+            </div>
+         </div>
+         <div class="panel-group">
+            <div class="panel panel-default">
+               <div class="panel-heading">Adresse</div>
+               <div class="panel-body">
+                  <div class="form-group">
+                     <label class="control-label col-sm-1" for="street">Straße:</label>
+                     <div class="col-sm-7">
+                        <input type="street" class="form-control" id="street" name="street" placeholder="Straße eingeben">
+                     </div>
+                     <div class="col-sm-4">
+                        <input type="street_number" class="form-control" id="street_number" name="street_number" placeholder="Hausnr. eingeben">
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="control-label col-sm-1" for="city">Ort:</label>
+                     <div class="col-sm-3">
+                        <input type="zip" class="form-control" id="zip" name="zip" placeholder="PLZ eingeben">
+                     </div>
+                     <div class="col-sm-8">
+                        <input type="city" class="form-control" id="city" name="city" placeholder="Ort eingeben">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="panel panel-default">
+               <div class="panel-heading">Verbindung</div>
+               <div class="panel-body">
+                  <div class="form-group">
+                     <label class="control-label col-sm-1" for="phone">Telefon:</label>
+                     <div class="col-sm-11">
+                        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Telefonnr. eingeben">
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="control-label col-sm-1" for="email">E-Mail:</label>
+                     <div class="col-sm-11">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail eingeben">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="form-group"> 
+               <div class="col-sm-offset-1 col-sm-11">
+                  <button type="submit" class="btn btn-success">Submit</button>
+               </div>
+            </div>
+            
+            <table>
+               <tr>
+                  <td>fam_name</td>
+                  <td>vor_name</td>
+                  <td>strasse</td>
+                  <td>hausnummer</td>
+                  <td>plz</td>
+                  <td>ort</td>
+                  <td>telefon</td>
+                  <td>email</td>
+               </tr>
+               {% for x in data %}
+               <tr>
+                  <td>{{x.fam_name}}</td>
+                  <td>{{x.vor_name}}</td>
+                  <td>{{x.strasse}}</td>
+                  <td>{{x.hausnummer}}</td>
+                  <td>{{x.plz}}</td>
+                  <td>{{x.ort}}</td>
+                  <td>{{x.telefon}}</td>
+                  <td>{{x.email}}</td>
+               </tr>
+               {% endfor %}
+            </table>
+      </form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <style>
+      table{
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div>
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <h1><a href="/">Adressverwaltung</a></h1>
+    </div>
+                {% block content %}
+                {% endblock %}
+</body>
+</html>

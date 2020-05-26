@@ -1,0 +1,35 @@
+<form action="/adresse/" method="post">{% csrf_token %}
+    <label style="font-weight: bold; color: red;" for="last_name">Familienname </label>
+    <input tabindex="1" maxlength="40" size="40" id="last_name" name="last_name"> &nbsp; &nbsp; &nbsp;&nbsp;
+	
+    <label style="color: red; font-weight: bold;" for="first_name">Vorname </label>
+    <input tabindex="2" maxlength="40" size="40" id="first_name" name="first_name" value=" ">
+
+    <br><br>
+
+    <label for="street">Strasse </label>
+	<input tabindex="3" maxlength="50" size="50" id="strasse" name="street">
+	
+    <label for="street_number">Nr </label>
+	<input tabindex="4" maxlength="10" size="10" name="street_number">
+
+    <br><br>
+
+    <label for="zip">PLZ </label>
+	<input tabindex="5" maxlength="5" size="5" id="zip" name="zip">&nbsp;&nbsp; 
+	
+    <label for="city">Ort </label>
+	<input tabindex="6" maxlength="50" size="50" name="city">           	
+
+    <br><br>
+
+    <label for="phone">Telefon </label>
+	<input tabindex="7" maxlength="50" size="50" name="phone">
+    <br>
+
+    <label for="email">eMail </label>
+	<input tabindex="8" maxlength="50" size="50" name="phone">
+    <br><br>
+
+    <input value="OK" type="submit">
+</form>

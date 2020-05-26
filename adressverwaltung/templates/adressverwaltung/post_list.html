@@ -1,0 +1,30 @@
+{% extends 'adressverwaltung/base.html'%}
+
+{% block content %}
+    <div>
+        <table>
+            <tr>
+                <th>lastName</th>
+                <th>firstName</th>
+                <th>street</th>
+                <th>housenumber</th>
+                <th>city</th>
+                <th>zipCode</th>
+                <th>phone</th>
+                <th>mail</th>
+                </tr>        
+                {% for x in person %}
+                <tr>
+                <td><a href="{% url 'post_detail' pk=x.pk %}">{{x.lastName}}</a></td>
+                <td>{{x.firstName}}</td>
+                <td>{{x.street}}</td>
+                <td>{{x.housenumber}}</td>
+                <td>{{x.city}}</td>
+                <td>{{x.zipCode}}</td>
+                <td>{{x.phone}}</td>
+                <td>{{x.mail}}</td>
+                </tr>
+                {% endfor %}        
+            </table>
+        </div>  
+{% endblock %}

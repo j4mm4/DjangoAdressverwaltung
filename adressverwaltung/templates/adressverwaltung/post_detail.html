@@ -1,0 +1,15 @@
+{% extends 'adressverwaltung/base.html' %}
+
+{% block content %}
+    <div class="post">
+        <a class="btn btn-default" href="{% url 'post_edit' pk=person.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <p><b>last name:</b> {{person.lastName}}</p>
+        <p><b>first name:</b> {{person.firstName}}</p>
+        <p><b>street:</b> {{person.street}}</p>
+        <p><b>housenumber:</b> {{person.housenumber}}</p>
+        <p><b>city:</b> {{person.city}}</p>
+        <p><b>zip Code:</b> {{person.zipCode}}</p>
+        <p><b>phone:</b> {{person.phone}}</p>
+        <p><b>mail:</b> {{person.mail}}</p>
+    </div>
+{% endblock %}
