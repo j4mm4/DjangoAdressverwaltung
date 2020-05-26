@@ -9,11 +9,13 @@ class Person(models.Model): #() gibt an, dass Modell ein Django-Modell ist -> Dj
     city = models.CharField(max_length = 100)
     zipCode = models.IntegerField() #keine max_length bei Int-Feldern -> führt zu Warnings bei migration
     phone = models.CharField(max_length = 100)
-    mail = models.CharField(max_length = 100)    
+    mail = models.CharField(max_length = 100)
     #Modell erstellen, dass alle Datenfelder enthält, die auf der Website angezeigt werden sollen
-    
-    def publish(self): #Methode für Veröffentlichung
+
+    def publish(self): #Methode für Speicherung
         self.save()
 
-    def __str__(self): #Nachname wird zurückgegeben
-        return self.lastName
+#    def __str__(self): #Nachname wird zurückgegeben
+#        return self.lastName
+
+
