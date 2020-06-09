@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 class Person(models.Model): #() gibt an, dass Modell ein Django-Modell ist -> Django weiß, dass es in DB gespeichert werden soll
     firstName = models.CharField(max_length = 100)
@@ -18,4 +17,4 @@ class Person(models.Model): #() gibt an, dass Modell ein Django-Modell ist -> Dj
 #    def __str__(self): #Nachname wird zurückgegeben
 #        return self.lastName
 
-
+#test
